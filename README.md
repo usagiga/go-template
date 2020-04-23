@@ -1,2 +1,24 @@
-# Go-Template
-This is template repository using Golang.
+# ${REPO_NAME}
+
+${REPO_DESC}
+
+
+## Installation
+
+```sh
+$ go get github.com/usagiga/${REPO_NAME}
+```
+
+
+## Usage
+
+
+
+## Dependencies
+
+- Go
+
+
+## License
+
+MIT
