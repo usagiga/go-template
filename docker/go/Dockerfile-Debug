@@ -1,0 +1,8 @@
+FROM golang:1.15
+
+WORKDIR /go/src/github.com/usagiga/go-template
+
+RUN go get -u github.com/go-delve/delve/cmd/dlv
+RUN go get -u github.com/cosmtrek/air
+
+CMD ["make", "delve"]

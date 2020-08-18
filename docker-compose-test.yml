@@ -1,0 +1,9 @@
+version: '3'
+services:
+  go-template-test:
+    build:
+      context: .
+      dockerfile: ./docker/go/Dockerfile-Test
+    env_file: ./docker/.env
+    volumes:
+      - .:/go/src/github.com/usagiga/go-template

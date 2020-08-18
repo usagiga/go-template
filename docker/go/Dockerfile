@@ -1,0 +1,5 @@
+FROM golang:1.15
+
+WORKDIR /go/src/github.com/usagiga/go-template
+
+CMD ["make", "run"]
