@@ -9,6 +9,9 @@ ${REPO_DESC}
 $ go get github.com/usagiga/${REPO_NAME}
 ```
 
+And you can use Docker Compose.
+See also [docs](./docs/docker.md).
+
 
 ## Usage
 
