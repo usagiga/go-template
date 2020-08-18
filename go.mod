@@ -1,3 +1,3 @@
 module github.com/usagiga/go-template
 
-go 1.14
+go 1.15
