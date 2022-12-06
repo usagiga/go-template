@@ -1,18 +1,35 @@
+GO_BIN=go
+EXEC_NAME=go-template
+
+.PHONY: xxx
 xxx:
 	@echo "Please select optimal option."
 
+.PHONY: build
 build:
-	@go build -o go-template .
+	@${GO_BIN} build -o ${EXEC_NAME} .
 
+.PHONY: vendor
+vendor:
+	@${GO_BIN} mod vendor
+
+.PHONY: clean
 clean:
-	@rm -f ./go-template
-	@rm -f ./docker/__debug_bin
+	@rm -f ./${EXEC_NAME}
+	@rm -rf ./vendor
 
+.PHONY: run
 run:
-	@go run .
+	@${GO_BIN} run .
 
-debug:
-	@air
+.PHONY: fmt
+fmt:
+	@${GO_BIN} fmt ./...
 
+.PHONY: lint
+lint:
+	@${GO_BIN} vet ./...
+
+.PHONY: test
 test:
-	@go test -v "./..."
+	@${GO_BIN} test -v ./...

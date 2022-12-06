@@ -1,29 +1,45 @@
-name: Go Build & Test
+name: "test"
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+    paths:
+      - "**.go"
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+    paths:
+      - "**.go"
 
 jobs:
-
-  build:
-    name: Go Build & Test
-    runs-on: ubuntu-latest
+  test:
+    name: "test"
+    runs-on: "ubuntu-latest"
     steps:
-
-    - name: Set up Go 1.15
-      uses: actions/setup-go@v1
-      with:
-        go-version: ^1.15
-      id: go
-
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
-
-    - name: Build
-      run: make build
-
-    - name: Test
-      run: make test
+      - uses: "actions/checkout@v3"
+      - uses: "actions/setup-go@v3"
+        with:
+          go-version: "1.19.2"
+      - name: "vet"
+        run: "make lint"
+      - name: "build"
+        run: "make build"
+      - name: "test"
+        run: "make test"
+      - name: "notify if error"
+        uses: actions/github-script@v4
+        with:
+          script: |-
+            const isPR = context.eventName == 'pull_request';
+            const jobUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            if (!isPR) {
+              return;
+            }
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Failed linte/build/test.\n${jobUrl}`
+            });
+        if: failure()

@@ -1,0 +1,18 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+full_bin = "go test -v ./..."
+include_ext = ["go", "tmpl"]
+exclude_dir = ["./tmp"]
+log = "air-test.log"
+delay = 5000 # ms
+stop_on_error = false
+send_interrupt = true
+kill_delay = 1000 # ms
+
+[log]
+time = false
+
+[misc]
+clean_on_exit = true

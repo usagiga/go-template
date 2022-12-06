@@ -1,20 +1,20 @@
 root = "."
-tmp_dir = "docker"
+tmp_dir = "tmp"
 
 [build]
-cmd = "go build -o ./docker/__debug_bin ."
-bin = "./docker/__debug_bin"
-full_bin = "APP_ENV=dev APP_USER=air /go/bin/dlv exec ./docker/__debug_bin --headless=true --listen=:2345 --api-version=2 --accept-multiclient"
-include_ext = ["go", "tmpl"]
-exclude_dir = ["./docker"]
-log = "air.log"
-delay = 1000 # ms
-stop_on_error = true
+cmd = "go build -o ./tmp/__debug_bin ."
+bin = "./tmp/__debug_bin"
+full_bin = "APP_ENV=dev APP_USER=air /go/bin/dlv exec ./tmp/__debug_bin --headless=true --listen=:2345 --api-version=2 --accept-multiclient"
+include_ext = ["go", "tpl"]
+exclude_dir = ["./tmp"]
+log = "air-debug.log"
+delay = 5000 # ms
+stop_on_error = false
 send_interrupt = true
-kill_delay = 500 # ms
+kill_delay = 1000 # ms
 
 [log]
 time = false
 
 [misc]
-clean_on_exit = false
+clean_on_exit = true
