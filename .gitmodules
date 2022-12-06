@@ -1,0 +1,3 @@
+[submodule ".editorconfig.d"]
+	path = .editorconfig.d
+	url = https://github.com/usagiga/editorconfig
