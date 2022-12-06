@@ -6,7 +6,7 @@ ${REPO_DESC}
 ## Installation
 
 ```sh
-$ go get github.com/usagiga/${REPO_NAME}
+$ go install github.com/usagiga/${REPO_NAME}@latest
 ```
 
 And you can use Docker Compose.
