@@ -27,19 +27,3 @@ jobs:
         run: "make build"
       - name: "test"
         run: "make test"
-      - name: "notify if error"
-        uses: actions/github-script@v4
-        with:
-          script: |-
-            const isPR = context.eventName == 'pull_request';
-            const jobUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-            if (!isPR) {
-              return;
-            }
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `Failed linte/build/test.\n${jobUrl}`
-            });
-        if: failure()
