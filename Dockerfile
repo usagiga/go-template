@@ -1,10 +1,10 @@
-FROM golang:1.19
+FROM golang:1.21
 
-WORKDIR /go/src/github.com/usagiga/git-hooks
+WORKDIR /src
 
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
 RUN go install github.com/cosmtrek/air@latest
 
-COPY . /go/src/github.com/usagiga/git-hooks
+COPY . /src
 
 CMD ["air"]

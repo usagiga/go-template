@@ -4,9 +4,9 @@ services:
     build:
       context: .
     ports:
-      - 2345:2345
+      - 2345:2345 # delve
     volumes:
-      - .:/go/src/github.com/usagiga/git-hooks
+      - .:/src
   app_test:
     build:
       context: .
