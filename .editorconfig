@@ -30,9 +30,15 @@ indent_size = 2
 indent_size = 2
 
 [*.md]
-# Default
+indent_size = 2
+
+[*.sh]
+indent_style = tab
 
 [*.{pl,t}]
+# Default
+
+[*.cs]
 # Default
 
 [*.{js,jsx,ts,tsx,css,scss,vue}]
@@ -41,4 +47,3 @@ insert_final_newline = unset
 trim_trailing_whitespace = unset
 indent_style = unset
 indent_size = unset
-
