@@ -10,7 +10,7 @@ $ go install github.com/usagiga/${REPO_NAME}@latest
 ```
 
 And you can use Docker Compose.
-See also [docs](./docs/docker.md).
+See also [docs](docs/developers/docker.md).
 
 
 ## Usage
@@ -22,6 +22,6 @@ See also [docs](./docs/docker.md).
 - Go
 
 
-## License
+## LICENSE
 
 MIT
