@@ -20,10 +20,10 @@ indent_style = tab
 [Makefile]
 indent_style = tab
 
-[*.{json,yml,yaml}]
+[*.{json,yml,yaml,xml,iml}]
 indent_size = 2
 
-[*.{html,htm}]
+[*.{html,htm,xhtml,xhtm}]
 indent_size = 2
 
 [*.{json.tftpl, tf, hcl, tfvars, tfstate, tfstate.backup}]
@@ -41,9 +41,18 @@ indent_style = tab
 [*.cs]
 # Default
 
+[*.{c,cpp,h,hpp}]
+# To configure their rules, use clang-format
+indent_style = unset
+indent_size = unset
+
 [*.{js,jsx,ts,tsx,css,scss,vue}]
 # To configure their rules, use ESLint / Prettier
 insert_final_newline = unset
 trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+
+[.gitmodules]
 indent_style = unset
 indent_size = unset
