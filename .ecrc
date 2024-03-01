@@ -1,0 +1,22 @@
+{
+  "Verbose": false,
+  "IgnoreDefaults": false,
+  "Exclude": [
+    "^\\.ecrc$",
+    "\\.sln$",
+    "\\.vcxproj$",
+    "\\.vcxproj.filters$",
+    "Resource\\.rc$",
+    "go.mod",
+    "go.sum"
+  ],
+  "SpacesAfterTabs": false,
+  "Disable": {
+    "EndOfLine": false,
+    "Indentation": false,
+    "IndentSize": false,
+    "InsertFinalNewline": false,
+    "TrimTrailingWhitespace": false,
+    "MaxLineLength": false
+  }
+}
