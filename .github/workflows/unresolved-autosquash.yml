@@ -1,0 +1,26 @@
+name: "Unresolved auto-squash commits"
+
+on:
+  pull_request:
+
+jobs:
+  check-commits:
+    name: "Unresolved auto-squash commits"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # OPTIMIZE: For a problem around performance, use single-branch & just for ${GITHUB_BASE_REF}..${GITHUB_HEAD_REF}
+          fetch-depth: 0
+      - name: "Unresolved auto-squash commits exist"
+        run: |-
+          BASE_REF=${GITHUB_BASE_REF:-main}
+          GIT_LOG="$(git log --oneline ${BASE_REF}.. | grep -E '(fixup!|squash!)' || true)"
+          echo "${GIT_LOG}"
+
+          if [[ -n ${GIT_LOG} ]]; then
+            echo 'this pr branch has unresolved auto-squash commit(s)' 1>&2
+            exit 1
+          fi
+
+          echo 'this pr branch has no unresolved auto-squash commits'
