@@ -17,6 +17,7 @@ WORKDIR /src
 COPY ["go.*", "./"]
 RUN go mod download
 
+# hadolint ignore=DL3021
 COPY --parents ["**/*.go", "Makefile", "./"]
 
 # Build (Development)
