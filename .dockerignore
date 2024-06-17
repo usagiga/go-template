@@ -1,0 +1,17 @@
+# To build images safer and faster,
+#   - Ignore large directories in `.dockerignore` (Docker can ignore directory recursively)
+#   - Avoid using '!' in `.dockerignore` (prevent from O(kN) directory travarsal)
+#   - Files required by images are written in `Dockerfile` (keep image small and secure)
+#       - As of Dockerfile 1.7-lab, use `COPY --parents ["**/*.go", "./"]`
+#   - Files not required when using Compose Watch, write ignore rules in `compose.yml` (prevent from rebuilding redundantly)
+#       - Unlike Dockerfile, we cannot write whitelist because Compose Watch is incompatible with glob pattern and --parents flag
+
+**/.git
+**/.idea
+**/.vscode
+
+.editorconfig.d
+.github
+docs
+etc
+scripts
