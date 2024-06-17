@@ -47,32 +47,32 @@ Set up these versions or higher :pray:
 # Docker CLI / Engine
 $ docker version
 Client:
- Version:           26.1.4
- API version:       1.45
- Go version:        go1.22.3
- Git commit:        5650f9b102
- Built:             Thu Jun  6 18:42:55 2024
- OS/Arch:           linux/amd64
- Context:           default
+  Version:           26.1.4
+  API version:       1.45
+  Go version:        go1.22.3
+  Git commit:        5650f9b102
+  Built:             Thu Jun  6 18:42:55 2024
+  OS/Arch:           linux/amd64
+  Context:           default
 
 Server:
- Engine:
-  Version:          26.1.4
-  API version:      1.45 (minimum version 1.24)
-  Go version:       go1.22.3
-  Git commit:       de5c9cf0b9
-  Built:            Thu Jun  6 18:42:55 2024
-  OS/Arch:          linux/amd64
-  Experimental:     false
- containerd:
-  Version:          v1.7.18
-  GitCommit:        ae71819c4f5e67bb4d5ae76a6b735f29cc25774e.m
- runc:
-  Version:          1.1.12
-  GitCommit:
- docker-init:
-  Version:          0.19.0
-  GitCommit:        de40ad0
+  Engine:
+    Version:          26.1.4
+    API version:      1.45 (minimum version 1.24)
+    Go version:       go1.22.3
+    Git commit:       de5c9cf0b9
+    Built:            Thu Jun  6 18:42:55 2024
+    OS/Arch:          linux/amd64
+    Experimental:     false
+  containerd:
+    Version:          v1.7.18
+    GitCommit:        ae71819c4f5e67bb4d5ae76a6b735f29cc25774e.m
+  runc:
+    Version:          1.1.12
+    GitCommit:
+  docker-init:
+    Version:          0.19.0
+    GitCommit:        de40ad0
 
 # Docker Compose
 $ docker compose version
@@ -91,7 +91,7 @@ Status:           running
 BuildKit version: v0.13.2
 Platforms:        linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
 Labels:
- org.mobyproject.buildkit.worker.moby.host-gateway-ip: 172.17.0.1
+  org.mobyproject.buildkit.worker.moby.host-gateway-ip: 172.17.0.1
 ```
 
 </details>
@@ -150,7 +150,6 @@ If you want to change arguments of `go test`, override it using Docker `CMD` ins
 - `docker compose run [SERVICE] [COMMAND] [ARGS]`
 - `commands` in `compose.yml`
   - [Extend your Compose file | Docker Docs](https://docs.docker.com/compose/multiple-compose-files/extends/)
-
 
 # How to Use This Template
 
