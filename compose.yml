@@ -1,0 +1,53 @@
+services:
+  app:
+    build:
+      context: .
+      target: prod
+    restart: always
+    profiles:
+      - prod
+
+  app-dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - '2345:2345' # delve
+    develop:
+      watch:
+        - action: rebuild
+          path: '.'
+          ignore:
+            - '.ecrc'
+            - '.editorconfig'
+            - '.gitignore'
+            - '.gitmodules'
+            - '.prototools'
+            - 'LICENSE'
+            - 'go-template'
+            - '**/*.md'
+    profiles:
+      - dev
+
+  app-test:
+    build:
+      context: .
+      target: test
+    ports:
+      - '2346:2346' # delve
+    develop:
+      watch:
+        - action: sync+restart
+          path: '.'
+          target: '.'
+          ignore:
+            - '.ecrc'
+            - '.editorconfig'
+            - '.gitignore'
+            - '.gitmodules'
+            - '.prototools'
+            - 'LICENSE'
+            - 'go-template'
+            - '**/*.md'
+    profiles:
+      - test

@@ -5,14 +5,14 @@ on:
   pull_request:
 
 jobs:
-  test:
+  build-test-lint:
     name: "Go (Test / Vet / Build)"
     runs-on: "ubuntu-latest"
     steps:
       - uses: "actions/checkout@v4"
       - uses: "actions/setup-go@v4"
         with:
-          go-version: "1.22.0"
+          go-version-file: "go.mod"
       - name: "vet"
         run: "make lint"
       - name: "test"

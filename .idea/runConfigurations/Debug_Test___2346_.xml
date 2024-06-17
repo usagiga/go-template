@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="delve on docker" type="GoRemoteDebugConfigurationType" factoryName="Go Remote">
+  <configuration default="false" name="Debug Test (:2346)" type="GoRemoteDebugConfigurationType" factoryName="Go Remote" port="2346">
     <option name="disconnectOption" value="LEAVE" />
     <disconnect value="LEAVE" />
     <method v="2" />
