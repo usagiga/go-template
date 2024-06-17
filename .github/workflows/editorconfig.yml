@@ -9,7 +9,7 @@ on:
 
 jobs:
   check-format:
-    name: "Run editorconfig-checker"
+    name: "EditorConfig (editorconfig-checker)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
