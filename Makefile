@@ -35,7 +35,7 @@ fmt:
 .PHONY: lint
 lint:
 	${GO_BIN} vet ./...
-	${GO_BIN} mod velify
+	${GO_BIN} mod verify
 
 .PHONY: test
 test:
